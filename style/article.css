@@ -1,0 +1,59 @@
+.articles_page {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    a {
+        text-decoration: none;
+    }
+}
+
+.artile_link {
+    min-width: 360px;
+    border: 1px solid #888;
+    padding: 10px;
+    border-radius: 8px;
+}
+.article_content {
+    display: flex;
+    gap: 10px;
+}
+
+.article_title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.article_summary {
+    font-size: 18px;
+}
+.article_img img {
+    height: 150px;
+    border-radius: 10px;
+}
+.article_date {
+    text-align: center;
+}
+
+.ar {
+    color: #333333;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: "Itim", cursive;
+}
+
+h2 {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.markdown-heading {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.gist {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
