@@ -40,7 +40,7 @@ body {
 }
 
 .title {
-    font-family: "Itim", cursive;
+    font-family: "Hiragino Mincho ProN";
     font-size: 70px;
     text-align: center;
     margin-top: 20px;
@@ -121,13 +121,13 @@ h4 {
     a {
         text-decoration: none;
         color: #333333;
-        font-family: "Itim", cursive;
+        font-family: "Hiragino Mincho ProN";
     }
     img {
         height: 50px;
     }
     .sns_explanation {
-        font-family: "Itim", cursive;
+        font-family: "Hiragino Mincho ProN";
         font-size: 15px;
         text-align: center;
         width: 100%;
@@ -153,6 +153,12 @@ h4 {
     #rss_logo {
         height: 40px;
     } */
+    #bsky_logo {
+        border-radius: 12px;
+    }
+    #discord_logo {
+        height: 50px;
+    }
 }
 
 .contents {
