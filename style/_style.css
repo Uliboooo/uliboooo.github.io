@@ -1,0 +1,274 @@
+body {
+    h2 {
+        font-family: "Hiragino Mincho ProN";
+        font-weight: 400;
+        font-size: 30px;
+    }
+    h3 {
+        font-family: "Hiragino Mincho ProN";
+        font-weight: 300;
+        font-size: 20px;
+    }
+    p {
+        font-family: "Hiragino Sans", "Meiryo";
+    }
+}
+
+.page {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (max-width: 480px) {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+.head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    a {
+        text-decoration: none;
+        color: #333333;
+        /* font-family: "Hiragino Mincho ProN"; */
+    }
+}
+
+.head_title {
+    font-family: "Hiragino Mincho ProN";
+}
+
+.title {
+    font-family: "Hiragino Mincho ProN";
+    font-size: 70px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.header_item {
+    flex: 1;
+}
+
+h2 {
+    /* font-family: "Itim", cursive; */
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    a {
+        color: #333333;
+        text-decoration: none;
+    }
+}
+h3 {
+    /* font-family: "Itim", cursive; */
+    text-align: center;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+h4 {
+    /* font-family: "Itim", cursive; */
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.info {
+    p {
+        width: 75%;
+        margin: auto;
+    }
+    .info_text {
+        text-align: center;
+        h2 {
+            text-align: center;
+        }
+    }
+    .info_text_p {
+        /* margin: 5px; */
+        text-align: center;
+        /* margin-left: 5px;
+        margin-right: 5px; */
+        margin: auto;
+        width: 90%;
+    }
+}
+
+.sns {
+    text-align: center;
+    h2 {
+        text-align: center;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        font-size: 20px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    li {
+        width: 60px;
+    }
+    a {
+        text-decoration: none;
+        color: #333333;
+        font-family: "Hiragino Mincho ProN";
+    }
+    img {
+        height: 50px;
+    }
+    .sns_explanation {
+        font-family: "Hiragino Mincho ProN";
+        font-size: 15px;
+        text-align: center;
+        width: 100%;
+        margin: inherit;
+        
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* #note_logo {
+        height: 65px;
+    }
+    #x_logo {
+        height: 40px;
+    }
+    #youtube_logo {
+        height: 70px;
+    }
+    */
+    #reddit_logo {
+        border-radius: 12px;
+    }
+    /*
+    #rss_logo {
+        height: 40px;
+    } */
+    #bsky_logo {
+        border-radius: 12px;
+    }
+    #discord_logo {
+        height: 50px;
+    }
+}
+
+.contents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    .content {
+        flex: 1;
+        min-width: 360px;
+        h2 {
+            text-align: center;
+        }
+    }
+    .series_list {
+        ul {
+            width: 80%;
+            margin: auto;
+            list-style: none;
+            text-align: center;
+            padding: 0;
+        }
+        li {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    }
+    .note-embed {
+        text-align: center;
+        margin: auto !important;
+        display: block;
+        /* width: 90% !important; */
+        min-width: 360px !important;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        @media screen and (max-width: 480px) {
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+    }
+    /* .github_repos {
+        #my_repos{
+            text-align: center;
+        }
+
+        
+        .github_lang {
+            iframe {
+                text-align: center;
+                margin: auto;
+                display: block;
+            }
+        }
+        .github_repo_link {
+            text-align: center;
+            margin: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    } */
+}
+
+.github_repos {
+    text-align: center;
+    h2 {
+        text-align: center;
+    }
+    #major_repos {
+        text-align: center;
+        margin: auto;
+    }
+    #my_repos {
+        h3 {
+            text-align: center;
+        }
+        text-align: center;
+    }
+    color: #333333;
+    ul {
+        padding: 0;
+    }
+    li {
+        list-style: none;
+        text-align: center;
+    }
+    a {
+        color: #333333;
+        text-align: center;
+        /* font-family: "Hiragino Sans"; */
+    }
+}
+
+.footer {
+    p {
+        text-align: center;
+        font-family: "Hiragino Sans";
+        font-weight: 200;
+    }
+}
+
+.hope {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+.en_articles {
+    a {
+        text-decoration: none;
+    }
+}
