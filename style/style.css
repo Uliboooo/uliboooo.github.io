@@ -38,8 +38,22 @@ h2 {
 .intro {
     .intro_content {
         text-align: center;
-        padding: 10px;
+        padding: 5px;
+        p {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
     }
+    #en {
+        p {
+            font-family: "Hiragino Mincho ProN";
+            font-size: 110%;
+        }
+        
+    }
+    
 }
 
 .sns {
