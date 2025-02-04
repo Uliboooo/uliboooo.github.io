@@ -124,3 +124,26 @@ h2 {
         }
     }
 }
+
+.this_page_github {
+    display: flex;
+    justify-content: center;
+    ul {
+        list-style: none;
+        padding: 0;
+        li {
+            a {
+                color: #333333;
+                /* text-decoration: none; */
+            }
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    p {
+        font-family: "Hiragino Mincho ProN";
+    }
+}
