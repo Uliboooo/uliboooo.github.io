@@ -1,38 +1,49 @@
 body {
   font-family: "Helvetica Neue",
-    Arial,
     "Hiragino Kaku Gothic ProN",
     "Hiragino Sans",
     "Noto Sans JP",
+    Arial,
+
     Meiryo,
     sans-serif;
-    color: #222;
-    padding-left: 20px;
-    padding-right: 20px;
+  color: #111;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #fcfbf7;
 }
 
 .header {
   .header_content {
     display: flex;
     justify-content: space-between;
+
     .title {
       font-size: 25px;
     }
 
-    .sns {
-      .sns_links {
-        display: flex;
-        gap: 10px;
-      }
-      ul {
-        list-style: none;
-        li {
-          a {
-            color: #222;
+    .meta_data {
+      display: flex;
+      gap: 20px;
+
+      .sns {
+        .sns_links {
+          display: flex;
+          gap: 10px;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            a {
+              color: #222;
+            }
           }
         }
-      }
 
+      }
     }
   }
 
@@ -44,5 +55,16 @@ body {
         }
       }
     }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  p {
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
 }
