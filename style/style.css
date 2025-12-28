@@ -1,3 +1,19 @@
+:root {
+  --bg-color: #fcfbf7;
+  --text-color: #111;
+  --header-link-color: #222;
+  --link-color: #0000EE;
+  --visited-link-color: #551A8B;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --header-link-color: #e0e0e0;
+  --link-color: #8ab4f8;
+  --visited-link-color: #c58af9;
+}
+
 body {
   font-family: "Helvetica Neue",
     "Hiragino Kaku Gothic ProN",
@@ -7,16 +23,42 @@ body {
 
     Meiryo,
     sans-serif;
-  color: #111;
+  color: var(--text-color);
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #fcfbf7;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:visited {
+  color: var(--visited-link-color);
+}
+
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+#theme-toggle:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
 }
 
 .header {
   .header_content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     .title {
       font-size: 25px;
@@ -25,6 +67,7 @@ body {
     .meta_data {
       display: flex;
       gap: 20px;
+      align-items: center;
 
       .sns {
         .sns_links {
@@ -35,10 +78,11 @@ body {
         ul {
           list-style: none;
           padding: 0;
+          margin: 0;
 
           li {
             a {
-              color: #222;
+              color: var(--header-link-color);
             }
           }
         }
