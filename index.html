@@ -3,8 +3,81 @@
 
 <head>
   <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: "Helvetica Neue",
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        "Noto Sans JP",
+        Arial,
+
+        Meiryo,
+        sans-serif;
+      color: #111;
+      padding-left: 20px;
+      padding-right: 20px;
+      background-color: #fcfbf7;
+    }
+
+    .header {
+      .header_content {
+        display: flex;
+        justify-content: space-between;
+
+        .title {
+          font-size: 25px;
+        }
+
+        .meta_data {
+          display: flex;
+          gap: 20px;
+
+          .sns {
+            .sns_links {
+              display: flex;
+              gap: 10px;
+            }
+
+            ul {
+              list-style: none;
+              padding: 0;
+
+              li {
+                a {
+                  color: #222;
+                }
+              }
+            }
+
+          }
+        }
+      }
+
+      .content {
+        .article_links {
+          .article_link {
+            p {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    .footer {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      p {
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+    }
+  </style>
+  <!-- <link rel="preload" href="/style/style.css" as="style"> -->
   <meta name="google-site-verification" content="374ddqy1awIggKtvK0z3OX-8YC0gBes_NEFeZkTJX8Q">
-  <link rel="stylesheet" href="style/style.css">
+  <!-- <link rel="stylesheet" href="style/style.css"> -->
   <!-- <link rel="stylesheet" href="style/article.css"> -->
   <link rel="shortcut icon" type="image/x-icon" href="/resource/favicon/favicon.ico">
 
@@ -19,133 +92,136 @@
   <meta name="twitter:site" content="@uliboooo" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
   <title>Uliboooo</title>
 </head>
 
 <body>
-  <div class="header">
+  <header class="header">
     <div class="header_content">
       <div class="title">
         <p>Uliboooo</p>
       </div>
       <div class="meta_data">
-        <div class="sns">
+        <nav class="sns">
           <ul class="sns_links">
             <li><a href="https://github.com/Uliboooo" target="_blank" rel="noopener noreferrer">Github</a></li>
             <li><a href="https://x.com/Uliboooo" target="_blank" rel="noopener noreferrer">X</a></li>
             <li><a href="https://zenn.dev/uliboooo" target="_blank" rel="noopener noreferrer">zenn</a></li>
             <li><a href="https://note.com/uliboooo" target="_blank" rel="noopener noreferrer">note</a></li>
           </ul>
-        </div>
+        </nav>
 
       </div>
     </div>
     <div class="desc_me">
       <p>ソフトウェアと文字が好きな大学生。oは4つです。RustでCLIとか開発してます。vim派。</p>
     </div>
-  </div>
+  </header>
 
-  <div class="content">
-    <div class="repo_links">
-      <h2>My github repositories</h2>
+  <main>
+    <div class="content">
+      <div class="repo_links">
+        <h2>My github repositories</h2>
 
-      <ul>
-        <li>
-          <div>
-            <a href="https://github.com/Uliboooo/ghost_git_writer" target="_blank"
-              rel="noopener noreferrer">ghost_git_writer(github)</a> / <a
-              href="https://uliboooo.github.io/ghost_git_writer" target="_blank" rel="noopener noreferrer">HomePage</a>
+        <ul>
+          <li>
+            <div>
+              <a href="https://github.com/Uliboooo/ghost_git_writer" target="_blank"
+                rel="noopener noreferrer">ghost_git_writer(github)</a> / <a
+                href="https://uliboooo.github.io/ghost_git_writer" target="_blank"
+                rel="noopener noreferrer">HomePage</a>
 
-            <p>LLMでGitコミットメッセージ、README、または差分要約を作成するツール。</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <a href="https://github.com/Uliboooo/dotfiles" target="_blank"
-              rel="noopener noreferrer">Dotfiles(github)</a>
-            <p>私のcli系の設定ファイル一覧。neovimなどの設定も全部あります。</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <a href="https://github.com/Uliboooo/track2line" target="_blank" rel="noopener noreferrer">track2line</a>
-            <p>VoiSona Talk などから出力された音声ファイルの名前を、それと同じ名前ののテキストファイル内に書かれた台詞を参照して一括変換するツール</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <a href="https://github.com/Uliboooo/polish_notation" target="_blank"
-              rel="noopener noreferrer">polish_notation</a>
-            <p>Rustで再帰関数を用いたポーランド記法電卓。</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <a href="https://github.com/Uliboooo/fibonacci_py" target="_blank"
-              rel="noopener noreferrer">fibonacci_py</a>
-            <p>フィボナッチ数列をpythonで生成するツール。</p>
-          </div>
-        </li>
-      </ul>
+              <p>LLMでGitコミットメッセージ、README、または差分要約を作成するツール。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <a href="https://github.com/Uliboooo/dotfiles" target="_blank"
+                rel="noopener noreferrer">Dotfiles(github)</a>
+              <p>私のcli系の設定ファイル一覧。neovimなどの設定も全部あります。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <a href="https://github.com/Uliboooo/track2line" target="_blank" rel="noopener noreferrer">track2line</a>
+              <p>VoiSona Talk などから出力された音声ファイルの名前を、それと同じ名前ののテキストファイル内に書かれた台詞を参照して一括変換するツール</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <a href="https://github.com/Uliboooo/polish_notation" target="_blank"
+                rel="noopener noreferrer">polish_notation</a>
+              <p>Rustで再帰関数を用いたポーランド記法電卓。</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <a href="https://github.com/Uliboooo/fibonacci_py" target="_blank"
+                rel="noopener noreferrer">fibonacci_py</a>
+              <p>フィボナッチ数列をpythonで生成するツール。</p>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="article_links">
+        <h2>My articles(note, zenn, hatena, and this site)</h2>
+
+        <ul>
+          <li>
+            <div class="article_link"><a href="https://note.com/uliboooo/m/m6c323899ecf4" target="_blank"
+                rel="noopener noreferrer">Rustを分りたい(note)</a>
+              <p>Rustに関するnote記事のまとめ</p>
+            </div>
+          </li>
+          <li>
+            <div class="article_link"><a href="https://note.com/uliboooo/n/n7ea272e490f0" target="_blank"
+                rel="noopener noreferrer">垂直タブバーは贅沢(note)</a>
+              <p>垂直タブの利点と小画面ゆえの悩ましさについて考えた話</p>
+            </div>
+          </li>
+          <li>
+            <div class="article_link">
+              <a href="https://note.com/uliboooo/n/nae5ae0da7df4" target="_blank"
+                rel="noopener noreferrer">fnキーが左にないキーボードをmacで使う(note)</a>
+              <p>fnキーが左にないキーボードをmacで使う上での不便をある程度解決する話</p>
+            </div>
+          </li>
+          <li>
+            <div class="article_link">
+              <a href="https://zenn.dev/uliboooo/articles/5bc9ce655c38c9" target="_blank"
+                rel="noopener noreferrer">git/gh
+                コマンド。個人的チートシート(zenn)</a>
+              <p>個人的によく使うからaliasにしてるコマンド群について</p>
+            </div>
+          </li>
+          <li>
+            <div class="article_link">
+              <a href="https://zenn.dev/uliboooo/articles/9f0add249046d9" target="_blank"
+                rel="noopener noreferrer">Rustでトレイト境界のような形で変数を束縛する【dyn】(zenn)</a>
+              <p>Rustは強い静的型付けです。しかし、場合によっては実行時に型を決定したいことがあります。</p>
+            </div>
+          </li>
+          <li>
+            <div class="article_link">
+              <a href="https://zenn.dev/uliboooo/articles/0f2c0e56e3f1fa" target="_blank"
+                rel="noopener noreferrer">serdeのシリアライズ/デシアライズ実例(zenn)</a>
+              <p>Rustで構造体をserdeライブラリを使ってシリアライズする話</p>
+            </div>
+          </li>
+        </ul>
+      </div>
 
     </div>
+  </main>
 
-    <div class="article_links">
-      <h2>My articles(note, zenn, hatena, and this site)</h2>
-
-      <ul>
-        <li>
-          <div class="article_link"><a href="https://note.com/uliboooo/m/m6c323899ecf4" target="_blank"
-              rel="noopener noreferrer">Rustを分りたい(note)</a>
-            <p>Rustに関するnote記事のまとめ</p>
-          </div>
-        </li>
-        <li>
-          <div class="article_link"><a href="https://note.com/uliboooo/n/n7ea272e490f0" target="_blank"
-              rel="noopener noreferrer">垂直タブバーは贅沢(note)</a>
-            <p>垂直タブの利点と小画面ゆえの悩ましさについて考えた話</p>
-          </div>
-        </li>
-        <li>
-          <div class="article_link">
-            <a href="https://note.com/uliboooo/n/nae5ae0da7df4" target="_blank"
-              rel="noopener noreferrer">fnキーが左にないキーボードをmacで使う(note)</a>
-            <p>fnキーが左にないキーボードをmacで使う上での不便をある程度解決する話</p>
-          </div>
-        </li>
-        <li>
-          <div class="article_link">
-            <a href="https://zenn.dev/uliboooo/articles/5bc9ce655c38c9" target="_blank" rel="noopener noreferrer">git/gh
-              コマンド。個人的チートシート(zenn)</a>
-            <p>個人的によく使うからaliasにしてるコマンド群について</p>
-          </div>
-        </li>
-        <li>
-          <div class="article_link">
-            <a href="https://zenn.dev/uliboooo/articles/9f0add249046d9" target="_blank"
-              rel="noopener noreferrer">Rustでトレイト境界のような形で変数を束縛する【dyn】(zenn)</a>
-            <p>Rustは強い静的型付けです。しかし、場合によっては実行時に型を決定したいことがあります。</p>
-          </div>
-        </li>
-        <li>
-          <div class="article_link">
-            <a href="https://zenn.dev/uliboooo/articles/0f2c0e56e3f1fa" target="_blank"
-              rel="noopener noreferrer">serdeのシリアライズ/デシアライズ実例(zenn)</a>
-            <p>Rustで構造体をserdeライブラリを使ってシリアライズする話</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="footer">
+  <footer class="footer">
     <p>Copyright 2025 Uliboooo </p>
     <p>
       <a href="https://github.com/Uliboooo/uliboooo.github.io">this page source(github)</a>
     </p>
-  </div>
+  </footer>
 
 </body>
 
