@@ -1,1 +1,1 @@
-[Go to Page](https://uliboooo.github.io/)
+[Go to Page](https://about.uliboooo.dev/)
