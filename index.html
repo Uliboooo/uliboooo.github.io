@@ -60,7 +60,7 @@
       background: none;
       border: 1px solid var(--text-color);
       color: var(--text-color);
-      padding: 5px 10px;
+      padding: 5px 5px;
       border-radius: 5px;
       cursor: pointer;
       font-family: inherit;
@@ -84,7 +84,7 @@
 
         .meta_data {
           display: flex;
-          gap: 20px;
+          gap: 10px;
           align-items: center;
 
           .sns {
@@ -284,9 +284,9 @@
 
     // Update button text on load based on current theme
     if (htmlElement.getAttribute('data-theme') === 'dark') {
-      toggleButton.textContent = 'Light Mode';
+      toggleButton.textContent = 'Light';
     } else {
-      toggleButton.textContent = 'Dark Mode';
+      toggleButton.textContent = 'Dark';
     }
 
     toggleButton.addEventListener('click', () => {
@@ -294,11 +294,11 @@
       if (currentTheme === 'dark') {
         htmlElement.removeAttribute('data-theme');
         localStorage.setItem('theme', 'light');
-        toggleButton.textContent = 'Dark Mode';
+        toggleButton.textContent = 'Dark';
       } else {
         htmlElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
-        toggleButton.textContent = 'Light Mode';
+        toggleButton.textContent = 'Light';
       }
     });
   </script>
