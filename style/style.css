@@ -30,6 +30,10 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+h2 {
+  border-bottom: 3px solid #222222;
+}
+
 a {
   color: var(--link-color);
 }
