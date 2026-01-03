@@ -172,31 +172,42 @@
           blogListContainer.innerHTML = listHtml;
         }
 
-        // Main Logic: Try local first, then GitHub API
-        fetch(postsPath)
+        // Main Logic: Try manifest.json first, then local directory, then GitHub API
+        fetch('posts/manifest.json')
           .then(response => {
-            if (!response.ok) throw new Error('Failed to fetch posts directory');
-            return response.text();
+            if (!response.ok) throw new Error('Manifest not found');
+            return response.json();
           })
-          .then(html => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            const links = Array.from(doc.querySelectorAll('a'));
-            
-            const postFiles = links
-              .map(link => link.getAttribute('href'))
-              .filter(href => href && (href.endsWith('.md') || href.endsWith('.markdown')))
-              .map(href => href.split('/').pop());
-
-            if (postFiles.length === 0) {
-              return fetchGitHubPosts();
-            }
-
-            fetchAndRenderPosts(postFiles);
+          .then(postFiles => {
+             fetchAndRenderPosts(postFiles);
           })
-          .catch(err => {
-            console.warn('Local fetch failed, falling back to GitHub API:', err);
-            fetchGitHubPosts();
+          .catch(() => {
+            // Fallback to directory listing (previous logic)
+            fetch(postsPath)
+              .then(response => {
+                if (!response.ok) throw new Error('Failed to fetch posts directory');
+                return response.text();
+              })
+              .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const links = Array.from(doc.querySelectorAll('a'));
+                
+                const postFiles = links
+                  .map(link => link.getAttribute('href'))
+                  .filter(href => href && (href.endsWith('.md') || href.endsWith('.markdown')))
+                  .map(href => href.split('/').pop());
+
+                if (postFiles.length === 0) {
+                  return fetchGitHubPosts();
+                }
+
+                fetchAndRenderPosts(postFiles);
+              })
+              .catch(err => {
+                console.warn('Local fetch failed, falling back to GitHub API:', err);
+                fetchGitHubPosts();
+              });
           });
 
         function fetchGitHubPosts() {
