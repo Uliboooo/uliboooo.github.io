@@ -1,24 +1,23 @@
 :root {
   /* Default: Light Theme (Graphite Style) */
   --bg-color: #ffffff;
-  --bg-card: #f9f9f9;
-  --bg-card-hover: #f0f0f0;
-  --border-color: #e0e0e0;
+  --bg-card: #ffffff; /* Use white for card to make it pop with border/shadow */
+  --bg-card-hover: #fcfcfc;
+  --border-color: #cccccc; /* Darker border for clarity */
 
-  --text-main: #222222;
-  --text-muted: #555555;
+  --text-main: #1a1a1a;
+  --text-muted: #4b4b4b;
 
-  --accent-color: #333333;
+  --accent-color: #000000;
   /* Darker accent for light mode */
   --gradient-start: #333;
   --gradient-end: #666;
 
-  --header-bg: rgba(255, 255, 255, 0.9);
-  --shadow-card: rgba(0, 0, 0, 0.05);
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --shadow-card: rgba(0, 0, 0, 0.1); /* More pronounced shadow */
 
   --font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-serif: "Georgia", "Times New Roman", Times, serif;
-  /* For that classic "Graphite" header look if desired */
 }
 
 /* Dark Theme Variables */
@@ -218,23 +217,10 @@ a:hover {
 
 .tab-pane {
   display: none;
-  animation: fadeIn 0.4s ease;
 }
 
 .tab-pane.active {
   display: block;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Cards & Grid */
@@ -250,14 +236,11 @@ a:hover {
   border-radius: 8px;
   /* Slightly sharper corners like Graphite */
   padding: 1.5rem;
-  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 4px var(--shadow-card);
 }
 
 .card:hover {
   background-color: var(--bg-card-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px var(--shadow-card);
 }
 
 .card h3 {
@@ -275,20 +258,39 @@ a:hover {
 }
 
 /* Repo Card Specifics */
-.repo-card .card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+.repo-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.repo-card .links {
   margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .repo-card .links a {
   font-size: 0.8rem;
   padding: 4px 8px;
   background: rgba(0, 0, 0, 0.05);
+  color: inherit;
+  border: 2px solid #00a497; /* Wide teal border */
   border-radius: 4px;
-  margin-left: 5px;
   text-decoration: none;
+}
+
+.repo-card .links a:hover {
+  background: rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+[data-theme="dark"] .repo-card .links a {
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+}
+
+[data-theme="dark"] .repo-card .links a:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 [data-theme="dark"] .repo-card .links a {
