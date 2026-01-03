@@ -376,7 +376,11 @@ footer {
   margin-top: 0.5rem;
   font-size: 0.8rem;
   text-decoration: underline;
-  opacity: 0.6;
+  color: var(--text-muted);
+}
+
+.source-link:hover {
+  color: var(--text-main);
 }
 
 /* Responsive adjustments */
