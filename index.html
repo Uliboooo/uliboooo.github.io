@@ -2,7 +2,25 @@
 <html lang="ja">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Uliboooo's Portfolio. Rust, CLI tools, and technical articles.">
+  <meta name="google-site-verification" content="374ddqy1awIggKtvK0z3OX-8YC0gBes_NEFeZkTJX8Q">
+  <title>Uliboooo</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/resource/favicon/favicon.ico">
+  <link rel="stylesheet" href="style/style.css">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Uliboooo" />
+  <meta property="og:description" content="Uliboooo's Portfolio. Rust, CLI tools, and technical articles." />
+  <meta property="og:image" content="https://about.uliboooo.dev/resource/logo.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@uliboooo" />
+
   <script>
+    // Theme Toggle Logic
     (function () {
       const savedTheme = localStorage.getItem('theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -10,307 +28,202 @@
         document.documentElement.setAttribute('data-theme', 'dark');
       }
     })();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Tab Switching
+      const tabs = document.querySelectorAll('.tab-btn');
+      const contents = document.querySelectorAll('.tab-pane');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          contents.forEach(c => c.classList.remove('active'));
+
+          tab.classList.add('active');
+          const target = document.getElementById(tab.dataset.target);
+          target.classList.add('active');
+        });
+      });
+
+      // Theme Toggle Button
+      const toggleButton = document.getElementById('theme-toggle');
+      const htmlElement = document.documentElement;
+
+      const updateButtonText = () => {
+        const isDark = htmlElement.getAttribute('data-theme') === 'dark';
+        toggleButton.textContent = isDark ? 'Light' : 'Dark';
+      };
+      updateButtonText();
+
+      toggleButton.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        if (currentTheme === 'dark') {
+          htmlElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          htmlElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        updateButtonText();
+      });
+    });
   </script>
-  <meta charset="UTF-8">
-  <meta name="description"
-    content="ソフトウェアと文字が好きな大学生、Ulibooooのポートフォリオサイトです。Rustで開発したCLIツールや、技術記事（Zenn/note）の情報をまとめています。">
-
-  <style>
-    :root {
-      --bg-color: #fcfbf7;
-      --text-color: #111;
-      --header-link-color: #222;
-      --link-color: #0000EE;
-      --visited-link-color: #551A8B;
-    }
-
-    [data-theme="dark"] {
-      --bg-color: #121212;
-      --text-color: #e0e0e0;
-      --header-link-color: #e0e0e0;
-      --link-color: #8ab4f8;
-      --visited-link-color: #c58af9;
-    }
-
-    body {
-      font-family: "Helvetica Neue",
-        "Hiragino Kaku Gothic ProN",
-        "Hiragino Sans",
-        "Noto Sans JP",
-        Arial,
-
-        Meiryo,
-        sans-serif;
-      color: var(--text-color);
-      padding-left: 20px;
-      padding-right: 20px;
-      background-color: var(--bg-color);
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    h2 {
-      border-bottom: 2px solid #777777;
-    }
-
-    h3 {
-      border-bottom: 2px dotted #c3dfe0;
-    }
-
-    a {
-      color: var(--link-color);
-    }
-
-    a:visited {
-      color: var(--visited-link-color);
-    }
-
-    #theme-toggle {
-      background: none;
-      border: 1px solid var(--text-color);
-      color: var(--text-color);
-      padding: 5px 5px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 14px;
-    }
-
-    #theme-toggle:hover {
-      background-color: var(--text-color);
-      color: var(--bg-color);
-    }
-
-    .header {
-      .header_content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .title {
-          font-size: 25px;
-        }
-
-        .meta_data {
-          display: flex;
-          gap: 10px;
-          align-items: center;
-
-          .sns {
-            .sns_links {
-              display: flex;
-              gap: 10px;
-            }
-
-            ul {
-              list-style: none;
-              padding: 0;
-              margin: 0;
-
-              li {
-                a {
-                  color: var(--header-link-color);
-                }
-              }
-            }
-
-          }
-        }
-      }
-
-      .content {
-        .article_links {
-          .article_link {
-            p {
-              font-size: 10px;
-            }
-          }
-        }
-      }
-    }
-
-    .footer {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-
-      p {
-        padding-top: 25px;
-        padding-bottom: 25px;
-      }
-    }
-  </style>
-  <!-- <link rel="preload" href="/style/style.css" as="style"> -->
-  <meta name="google-site-verification" content="374ddqy1awIggKtvK0z3OX-8YC0gBes_NEFeZkTJX8Q">
-  <!-- <link rel="stylesheet" href="style/style.css"> -->
-  <!-- <link rel="stylesheet" href="style/article.css"> -->
-  <link rel="shortcut icon" type="image/x-icon" href="/resource/favicon/favicon.ico">
-  <meta property="og:title" content="about uliboooo" />
-  <meta property="og:description" content="describe about uliboooo" />
-  <meta property="og:image" content="https://about.uliboooo.dev/resource/logo.png" />
-  <meta property="og:url" content="https://about.uliboooo.dev/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="about uliboooo" />
-
-  <meta name="twitter:card" content="https://about.uliboooo.dev/resource/logo.png" />
-  <meta name="twitter:site" content="@uliboooo" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Uliboooo</title>
 </head>
 
 <body>
-  <header class="header">
-    <div class="header_content">
-      <div class="title">
-        <p>Uliboooo</p>
-      </div>
-      <div class="meta_data">
-        <nav class="sns">
-          <ul class="sns_links">
-            <li><a href="https://github.com/Uliboooo" target="_blank" rel="noopener noreferrer">Github</a></li>
-            <li><a href="https://x.com/Uliboooo" target="_blank" rel="noopener noreferrer">X</a></li>
-            <li><a href="https://zenn.dev/uliboooo" target="_blank" rel="noopener noreferrer">zenn</a></li>
-            <li><a href="https://note.com/uliboooo" target="_blank" rel="noopener noreferrer">note</a></li>
-          </ul>
-        </nav>
-        <button id="theme-toggle" aria-label="Toggle dark mode">Dark Mode</button>
-      </div>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="/resource/logo.png" alt="Uliboooo Logo" height="32">
+      <span>Uliboooo</span>
     </div>
-    <div class="desc_me">
-      <h2>## About me</h2>
-      <p>ソフトウェアと文字が好きな大学生。oは4つです。RustでCLIとか開発してます。vim派。</p>
+
+    <nav class="tab-nav">
+      <button class="tab-btn active" data-target="about">About Me</button>
+      <button class="tab-btn" data-target="repos">Repositories</button>
+      <button class="tab-btn" data-target="articles">Articles</button>
+      <button class="tab-btn" data-target="blogs">Blogs</button>
+    </nav>
+
+    <div class="header-right">
+      <div class="social-links">
+        <a href="https://github.com/Uliboooo" target="_blank" aria-label="GitHub"><img src="/resource/icons/github.svg"
+            alt="GitHub"></a>
+        <a href="https://x.com/Uliboooo" target="_blank" aria-label="X (Twitter)"><img src="/resource/icons/x.svg"
+            alt="X"></a>
+                <a href="https://zenn.dev/uliboooo" target="_blank" aria-label="Zenn"><img src="/resource/icons/zenn_logo.svg" alt="Zenn" class="no-invert"></a>
+                <a href="https://note.com/uliboooo" target="_blank" aria-label="Note"><img src="/resource/icons/note.png" alt="Note" class="no-invert"></a>
+              </div>
+              <button id="theme-toggle" class="theme-btn">Dark</button>
     </div>
   </header>
 
-  <main>
-    <div class="content">
-      <div class="repo_links">
-        <h2>## My github repositories</h2>
+  <main class="container">
 
-        <ul>
-          <li>
-            <div>
-              <a href="https://github.com/Uliboooo/ghost_git_writer" target="_blank"
-                rel="noopener noreferrer">ghost_git_writer(github)</a> / <a
-                href="https://uliboooo.github.io/ghost_git_writer" target="_blank"
-                rel="noopener noreferrer">HomePage</a>
-
-              <p>LLMでGitコミットメッセージ、README、または差分要約を作成するツール。</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="https://github.com/Uliboooo/dotfiles" target="_blank"
-                rel="noopener noreferrer">Dotfiles(github)</a>
-              <p>私のcli系の設定ファイル一覧。neovimなどの設定も全部あります。</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="https://github.com/Uliboooo/track2line" target="_blank" rel="noopener noreferrer">track2line</a>
-              <p>VoiSona Talk などから出力された音声ファイルの名前を、それと同じ名前ののテキストファイル内に書かれた台詞を参照して一括変換するツール</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="https://github.com/Uliboooo/polish_notation" target="_blank"
-                rel="noopener noreferrer">polish_notation</a>
-              <p>Rustで再帰関数を用いたポーランド記法電卓。</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="https://github.com/Uliboooo/fibonacci_py" target="_blank"
-                rel="noopener noreferrer">fibonacci_py</a>
-              <p>フィボナッチ数列をpythonで生成するツール。</p>
-            </div>
-          </li>
-        </ul>
-
+    <!-- About Tab -->
+    <section id="about" class="tab-pane active">
+      <div class="card about-card">
+        <h2>About Me</h2>
+        <p>ソフトウェアと文字が好きな大学生。oは4つです。</p>
+        <p>RustでCLIツールなどを開発しています。エディタはVim派です。</p>
+        <br>
+        <p>I am a university student who loves software and text. (My name has four 'o's).</p>
+        <p>I develop CLI tools mainly using Rust. I'm a Vimmer.</p>
       </div>
+    </section>
 
-      <div class="article_links">
-        <h2>## My articles</h2>
+    <!-- Repositories Tab -->
+    <section id="repos" class="tab-pane">
+      <div class="grid">
+        <div class="card repo-card">
+          <div class="card-header">
+            <h3>ghost_git_writer</h3>
+            <div class="links">
+              <a href="https://github.com/Uliboooo/ghost_git_writer" target="_blank">GitHub</a>
+              <a href="https://uliboooo.github.io/ghost_git_writer" target="_blank">Home</a>
+            </div>
+          </div>
+          <p>LLMでGitコミットメッセージ、README、または差分要約を作成するツール。</p>
+        </div>
 
-        <ul>
-          <li>
-            <div class="article_link"><a href="https://note.com/uliboooo/m/m6c323899ecf4" target="_blank"
-                rel="noopener noreferrer">Rustを分りたい(note)</a>
-              <p>Rustに関するnote記事のまとめ</p>
+        <div class="card repo-card">
+          <div class="card-header">
+            <h3>track2line</h3>
+            <div class="links">
+              <a href="https://github.com/Uliboooo/track2line" target="_blank">GitHub</a>
             </div>
-          </li>
-          <li>
-            <div class="article_link"><a href="https://note.com/uliboooo/n/n7ea272e490f0" target="_blank"
-                rel="noopener noreferrer">垂直タブバーは贅沢(note)</a>
-              <p>垂直タブの利点と小画面ゆえの悩ましさについて考えた話</p>
+          </div>
+          <p>VoiSona Talk などから出力された音声ファイルの名前を、台詞テキストを参照して一括変換するツール。</p>
+        </div>
+
+        <div class="card repo-card">
+          <div class="card-header">
+            <h3>polish_notation</h3>
+            <div class="links">
+              <a href="https://github.com/Uliboooo/polish_notation" target="_blank">GitHub</a>
             </div>
-          </li>
-          <li>
-            <div class="article_link">
-              <a href="https://note.com/uliboooo/n/nae5ae0da7df4" target="_blank"
-                rel="noopener noreferrer">fnキーが左にないキーボードをmacで使う(note)</a>
-              <p>fnキーが左にないキーボードをmacで使う上での不便をある程度解決する話</p>
+          </div>
+          <p>Rustで再帰関数を用いたポーランド記法電卓。</p>
+        </div>
+
+        <div class="card repo-card">
+          <div class="card-header">
+            <h3>dotfiles</h3>
+            <div class="links">
+              <a href="https://github.com/Uliboooo/dotfiles" target="_blank">GitHub</a>
             </div>
-          </li>
-          <li>
-            <div class="article_link">
-              <a href="https://zenn.dev/uliboooo/articles/5bc9ce655c38c9" target="_blank"
-                rel="noopener noreferrer">git/gh
-                コマンド。個人的チートシート(zenn)</a>
-              <p>個人的によく使うからaliasにしてるコマンド群について</p>
+          </div>
+          <p>私のCLI系の設定ファイル一覧。Neovimなどの設定も管理しています。</p>
+        </div>
+
+        <div class="card repo-card">
+          <div class="card-header">
+            <h3>fibonacci_py</h3>
+            <div class="links">
+              <a href="https://github.com/Uliboooo/fibonacci_py" target="_blank">GitHub</a>
             </div>
-          </li>
-          <li>
-            <div class="article_link">
-              <a href="https://zenn.dev/uliboooo/articles/9f0add249046d9" target="_blank"
-                rel="noopener noreferrer">Rustでトレイト境界のような形で変数を束縛する【dyn】(zenn)</a>
-              <p>Rustは強い静的型付けです。しかし、場合によっては実行時に型を決定したいことがあります。</p>
-            </div>
-          </li>
-          <li>
-            <div class="article_link">
-              <a href="https://zenn.dev/uliboooo/articles/0f2c0e56e3f1fa" target="_blank"
-                rel="noopener noreferrer">serdeのシリアライズ/デシアライズ実例(zenn)</a>
-              <p>Rustで構造体をserdeライブラリを使ってシリアライズする話</p>
-            </div>
-          </li>
-        </ul>
+          </div>
+          <p>フィボナッチ数列をPythonで生成するツール。</p>
+        </div>
       </div>
+    </section>
 
-    </div>
+    <!-- Articles Tab -->
+    <section id="articles" class="tab-pane">
+      <div class="list">
+        <a href="https://zenn.dev/uliboooo/articles/9f0add249046d9" target="_blank" class="card article-card">
+          <span class="tag zenn">Zenn</span>
+          <h3>Rustでトレイト境界のような形で変数を束縛する【dyn】</h3>
+          <p>実行時に型を決定したい場合のRustのテクニック。</p>
+        </a>
+
+        <a href="https://zenn.dev/uliboooo/articles/5bc9ce655c38c9" target="_blank" class="card article-card">
+          <span class="tag zenn">Zenn</span>
+          <h3>git/gh コマンド。個人的チートシート</h3>
+          <p>個人的によく使うからaliasにしてるコマンド群について。</p>
+        </a>
+
+        <a href="https://zenn.dev/uliboooo/articles/0f2c0e56e3f1fa" target="_blank" class="card article-card">
+          <span class="tag zenn">Zenn</span>
+          <h3>serdeのシリアライズ/デシアライズ実例</h3>
+          <p>Rustで構造体をserdeライブラリを使ってシリアライズする話。</p>
+        </a>
+
+        <a href="https://note.com/uliboooo/m/m6c323899ecf4" target="_blank" class="card article-card">
+          <span class="tag note">Note</span>
+          <h3>Rustを分りたい</h3>
+          <p>Rustに関するnote記事のまとめ。</p>
+        </a>
+
+        <a href="https://note.com/uliboooo/n/n7ea272e490f0" target="_blank" class="card article-card">
+          <span class="tag note">Note</span>
+          <h3>垂直タブバーは贅沢</h3>
+          <p>垂直タブの利点と小画面ゆえの悩ましさについて。</p>
+        </a>
+
+        <a href="https://note.com/uliboooo/n/nae5ae0da7df4" target="_blank" class="card article-card">
+          <span class="tag note">Note</span>
+          <h3>fnキーが左にないキーボードをmacで使う</h3>
+          <p>キー配置の不便を解決する話。</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Blogs Tab -->
+    <section id="blogs" class="tab-pane">
+      <div class="card empty-state">
+        <h3>Coming Soon</h3>
+        <p>Technical blog functionality is under development.</p>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer">
-    <p>Copyright 2025-26 Uliboooo </p>
-    <p>
-      <a href="https://github.com/Uliboooo/uliboooo.github.io">this page source(github)</a>
-    </p>
+  <footer>
+    <p>&copy; 2025-2026 Uliboooo. All rights reserved.</p>
+    <a href="https://github.com/Uliboooo/uliboooo.github.io" class="source-link">View Source</a>
   </footer>
 
-  <script>
-    const toggleButton = document.getElementById('theme-toggle');
-    const htmlElement = document.documentElement;
-
-    // Update button text on load based on current theme
-    if (htmlElement.getAttribute('data-theme') === 'dark') {
-      toggleButton.textContent = 'Light';
-    } else {
-      toggleButton.textContent = 'Dark';
-    }
-
-    toggleButton.addEventListener('click', () => {
-      const currentTheme = htmlElement.getAttribute('data-theme');
-      if (currentTheme === 'dark') {
-        htmlElement.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-        toggleButton.textContent = 'Dark';
-      } else {
-        htmlElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        toggleButton.textContent = 'Light';
-      }
-    });
-  </script>
 </body>
 
 </html>

@@ -1,118 +1,405 @@
 :root {
-  --bg-color: #fcfbf7;
-  --text-color: #111;
-  --header-link-color: #222;
-  --link-color: #0000EE;
-  --visited-link-color: #551A8B;
+  /* Default: Light Theme (Graphite Style) */
+  --bg-color: #ffffff;
+  --bg-card: #f9f9f9;
+  --bg-card-hover: #f0f0f0;
+  --border-color: #e0e0e0;
+
+  --text-main: #222222;
+  --text-muted: #555555;
+
+  --accent-color: #333333;
+  /* Darker accent for light mode */
+  --gradient-start: #333;
+  --gradient-end: #666;
+
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --shadow-card: rgba(0, 0, 0, 0.05);
+
+  --font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Georgia", "Times New Roman", Times, serif;
+  /* For that classic "Graphite" header look if desired */
 }
 
+/* Dark Theme Variables */
 [data-theme="dark"] {
-  --bg-color: #121212;
-  --text-color: #e0e0e0;
-  --header-link-color: #e0e0e0;
-  --link-color: #8ab4f8;
-  --visited-link-color: #c58af9;
+  --bg-color: #0d0e12;
+  --bg-card: #16181d;
+  --bg-card-hover: #1e2026;
+  --border-color: #2a2d35;
+
+  --text-main: #ededed;
+  --text-muted: #8a8f98;
+
+  --accent-color: #5e6ad2;
+  --gradient-start: #a371f7;
+  --gradient-end: #5e6ad2;
+
+  --header-bg: rgba(13, 14, 18, 0.9);
+  --shadow-card: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: "Helvetica Neue",
-    "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans",
-    "Noto Sans JP",
-    Arial,
-
-    Meiryo,
-    sans-serif;
-  color: var(--text-color);
-  padding-left: 20px;
-  padding-right: 20px;
+  font-family: var(--font-main);
   background-color: var(--bg-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-h2 {
-  border-bottom: 3px solid #222222;
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 a {
-  color: var(--link-color);
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
 }
 
-a:visited {
-  color: var(--visited-link-color);
+a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
 }
 
-#theme-toggle {
-  background: none;
-  border: 1px solid var(--text-color);
-  color: var(--text-color);
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 14px;
+[data-theme="dark"] a:hover {
+  color: #8ab4f8;
+  text-decoration: none;
 }
 
-#theme-toggle:hover {
-  background-color: var(--text-color);
-  color: var(--bg-color);
-}
-
-.header {
-  .header_content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .title {
-      font-size: 25px;
-    }
-
-    .meta_data {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-
-      .sns {
-        .sns_links {
-          display: flex;
-          gap: 10px;
-        }
-
-        ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-
-          li {
-            a {
-              color: var(--header-link-color);
-            }
-          }
-        }
-
-      }
-    }
-  }
-
-  .content {
-    .article_links {
-      .article_link {
-        p {
-          font-size: 10px;
-        }
-      }
-    }
-  }
-}
-
-.footer {
+/* Header & Navbar */
+.navbar {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  background-color: var(--header-bg);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  border-bottom: 1px solid transparent;
+}
 
-  p {
-    padding-top: 25px;
-    padding-bottom: 25px;
+/* Optional: Add a subtle border to header in light mode for separation */
+:root:not([data-theme="dark"]) .navbar {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-family: var(--font-serif);
+  color: var(--text-main);
+}
+
+.tab-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.2s;
+  font-family: var(--font-main);
+}
+
+.tab-btn:hover {
+  color: var(--text-main);
+}
+
+.tab-btn.active {
+  color: var(--text-main);
+}
+
+/* Active underline animation */
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--text-main);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.tab-btn.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+[data-theme="dark"] .tab-btn.active::after {
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+}
+
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-links img {
+  width: 20px;
+  height: 20px;
+  transition: opacity 0.2s;
+  /* Default: Dark text/icons in light mode, assume SVGs are black or colored */
+}
+
+/* In Dark Mode, invert black icons to white. */
+[data-theme="dark"] .social-links img:not(.no-invert) {
+  filter: invert(1);
+}
+
+/* Ensure colored icons (Zenn) are NOT inverted even in dark mode if they are already visible, 
+   or handle specifically. Zenn logo is Blue on transparent. 
+   Blue shows up okay on dark gray. 
+*/
+.social-links img.no-invert {
+  filter: none !important;
+}
+
+
+.social-links a:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.theme-btn:hover {
+  background: var(--bg-card-hover);
+}
+
+
+/* Main Content Area */
+.container {
+  max-width: 1000px;
+  margin: 3rem auto;
+  /* Added top margin since hero is gone */
+  padding: 0 1rem 4rem;
+  min-height: 60vh;
+}
+
+.tab-pane {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cards & Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  /* Slightly sharper corners like Graphite */
+  padding: 1.5rem;
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 4px var(--shadow-card);
+}
+
+.card:hover {
+  background-color: var(--bg-card-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px var(--shadow-card);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-main);
+  font-family: var(--font-serif);
+  /* Serif headings for cards too? Maybe. */
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Repo Card Specifics */
+.repo-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.repo-card .links a {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+[data-theme="dark"] .repo-card .links a {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.repo-card .links a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .repo-card .links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Article List */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.article-card {
+  display: block;
+  /* Make the whole card clickable */
+  cursor: pointer;
+}
+
+.article-card:hover {
+  text-decoration: none;
+}
+
+.article-card .tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.article-card .tag.zenn {
+  background-color: rgba(62, 168, 255, 0.1);
+  color: #3ea8ff;
+}
+
+.article-card .tag.note {
+  background-color: rgba(44, 182, 150, 0.1);
+  color: #2cb696;
+}
+
+/* About & Empty States */
+.about-card {
+  max-width: 800px;
+  margin: 0 auto;
+  border: none;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+.about-card h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+  font-family: var(--font-serif);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  border-style: dashed;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;
+}
+
+.source-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  opacity: 0.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .tab-nav {
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
