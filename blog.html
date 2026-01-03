@@ -7,7 +7,7 @@
   <meta name="description" content="Uliboooo's Blog">
   <title>Blog | Uliboooo</title>
 
-  <link rel="shortcut icon" type="image/x-icon" href="/resource/favicon/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="resource/favicon/favicon.ico">
   <link rel="stylesheet" href="style/style.css">
   
   <!-- Marked.js for Markdown parsing -->
@@ -64,7 +64,7 @@
          return;
       }
 
-      fetch(`/posts/${postFilename}`)
+      fetch(`posts/${postFilename}`)
         .then(response => {
           if (!response.ok) throw new Error('Post not found');
           return response.text();
@@ -209,7 +209,7 @@
 
   <header class="navbar">
     <div class="logo">
-      <img src="/resource/logo.webp" alt="Uliboooo Logo" height="32">
+      <img src="resource/logo.webp" alt="Uliboooo Logo" height="32">
       <span>Uliboooo</span>
     </div>
 
@@ -218,17 +218,17 @@
 
     <div class="header-right">
       <div class="social-links">
-        <a href="https://github.com/Uliboooo" target="_blank" aria-label="GitHub"><img src="/resource/icons/github.svg" alt="GitHub"></a>
-        <a href="https://x.com/Uliboooo" target="_blank" aria-label="X (Twitter)"><img src="/resource/icons/x.svg" alt="X"></a>
-        <a href="https://zenn.dev/uliboooo" target="_blank" aria-label="Zenn"><img src="/resource/icons/zenn_logo.svg" alt="Zenn" class="no-invert"></a>
-        <a href="https://note.com/uliboooo" target="_blank" aria-label="Note"><img src="/resource/icons/note.png" alt="Note" class="no-invert"></a>
+        <a href="https://github.com/Uliboooo" target="_blank" aria-label="GitHub"><img src="resource/icons/github.svg" alt="GitHub"></a>
+        <a href="https://x.com/Uliboooo" target="_blank" aria-label="X (Twitter)"><img src="resource/icons/x.svg" alt="X"></a>
+        <a href="https://zenn.dev/uliboooo" target="_blank" aria-label="Zenn"><img src="resource/icons/zenn_logo.svg" alt="Zenn" class="no-invert"></a>
+        <a href="https://note.com/uliboooo" target="_blank" aria-label="Note"><img src="resource/icons/note.png" alt="Note" class="no-invert"></a>
       </div>
       <button id="theme-toggle" class="theme-btn">Dark</button>
     </div>
   </header>
 
   <main class="container">
-    <a href="/#blogs" class="back-btn">← Back to Blogs</a>
+    <a href="index.html#blogs" class="back-btn">← Back to Blogs</a>
     
     <article class="card blog-container">
       <header class="blog-header">

@@ -8,7 +8,7 @@
   <meta name="google-site-verification" content="374ddqy1awIggKtvK0z3OX-8YC0gBes_NEFeZkTJX8Q">
   <title>Uliboooo</title>
 
-  <link rel="shortcut icon" type="image/x-icon" href="/resource/favicon/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="resource/favicon/favicon.ico">
   <link rel="stylesheet" href="style/style.css">
 
   <!-- Open Graph / Twitter -->
@@ -88,7 +88,7 @@
       // --- BLOG LIST LOGIC ---
       const blogListContainer = document.getElementById('blog-list');
       if (blogListContainer) {
-        const postsPath = '/posts/';
+        const postsPath = 'posts/';
         
         blogListContainer.innerHTML = '<div class="card empty-state"><p>Loading posts...</p></div>';
 
@@ -119,7 +119,7 @@
 
           const postsData = await Promise.all(postFiles.map(async (filename) => {
             try {
-              const res = await fetch(`/posts/${filename}`);
+              const res = await fetch(`posts/${filename}`);
               if (!res.ok) return null;
               const text = await res.text();
               const meta = parseFrontMatter(text);
@@ -161,7 +161,7 @@
 
           const listHtml = validPosts.map(post => {
             return `
-              <a href="/blog.html?p=${encodeURIComponent(post.filename)}" class="card article-card">
+              <a href="blog.html?p=${encodeURIComponent(post.filename)}" class="card article-card">
                 <h3>${post.title}</h3>
                 ${post.date ? `<p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">${post.date}</p>` : ''}
                 ${post.description ? `<p>${post.description}</p>` : ''}
@@ -233,7 +233,7 @@
 
   <header class="navbar">
     <div class="logo">
-      <img src="/resource/logo.webp" alt="Uliboooo Logo" height="32">
+      <img src="resource/logo.webp" alt="Uliboooo Logo" height="32">
       <span>Uliboooo</span>
     </div>
 
@@ -246,13 +246,13 @@
 
     <div class="header-right">
       <div class="social-links">
-        <a href="https://github.com/Uliboooo" target="_blank" aria-label="GitHub"><img src="/resource/icons/github.svg"
+        <a href="https://github.com/Uliboooo" target="_blank" aria-label="GitHub"><img src="resource/icons/github.svg"
             alt="GitHub"></a>
-        <a href="https://x.com/Uliboooo" target="_blank" aria-label="X (Twitter)"><img src="/resource/icons/x.svg"
+        <a href="https://x.com/Uliboooo" target="_blank" aria-label="X (Twitter)"><img src="resource/icons/x.svg"
             alt="X"></a>
-        <a href="https://zenn.dev/uliboooo" target="_blank" aria-label="Zenn"><img src="/resource/icons/zenn_logo.svg"
+        <a href="https://zenn.dev/uliboooo" target="_blank" aria-label="Zenn"><img src="resource/icons/zenn_logo.svg"
             alt="Zenn" class="no-invert"></a>
-        <a href="https://note.com/uliboooo" target="_blank" aria-label="Note"><img src="/resource/icons/note.png"
+        <a href="https://note.com/uliboooo" target="_blank" aria-label="Note"><img src="resource/icons/note.png"
             alt="Note" class="no-invert"></a>
       </div>
       <button id="theme-toggle" class="theme-btn">Dark</button>
