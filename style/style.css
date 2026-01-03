@@ -135,7 +135,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 2px;
-  background: var(--text-main);
+  background: #444444;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
@@ -144,10 +144,6 @@ a:hover {
 .tab-btn.active::after {
   transform: scaleX(1);
   transform-origin: left;
-}
-
-[data-theme="dark"] .tab-btn.active::after {
-  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
 }
 
 
@@ -181,6 +177,11 @@ a:hover {
 */
 .social-links img.no-invert {
   filter: none !important;
+}
+
+[data-theme="dark"] .social-links img[alt="Note"] {
+  background-color: #ffffff;
+  border-radius: 2px;
 }
 
 
@@ -342,10 +343,7 @@ a:hover {
 .about-card {
   max-width: 800px;
   margin: 0 auto;
-  border: none;
-  background: transparent;
-  padding: 0;
-  box-shadow: none;
+  padding: 2rem;
 }
 
 .about-card h2 {
