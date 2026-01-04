@@ -98,6 +98,12 @@ a:hover {
   font-size: 1.5rem;
   font-family: var(--font-serif);
   color: var(--text-main);
+  text-decoration: none; /* Ensure no underline initially */
+}
+
+.navbar .logo:hover {
+  text-decoration: none; /* No underline on hover for logo */
+  color: var(--text-main); /* Keep original color */
 }
 
 .tab-nav {
@@ -452,16 +458,18 @@ footer {
 
 .footnotes {
   margin-top: 1rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem; /* Slightly smaller */
   color: var(--text-muted);
+  line-height: 1.1; /* Very tight line height */
 }
 
 .footnotes ol {
   margin-left: 1.5rem;
+  margin-bottom: 0; /* Remove bottom margin from list */
 }
 
 .footnotes li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.1rem; /* Minimal spacing */
 }
 
 .footnote-ref {
@@ -475,5 +483,100 @@ footer {
 .footnote-backref {
   margin-left: 4px;
   text-decoration: none;
+  color: var(--accent-color);
+}
+
+/* Blog Specific Styles */
+.blog-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.blog-header {
+  margin-bottom: 3rem; /* Increased spacing after header */
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.blog-header h1 {
+  font-size: 2.5rem;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+}
+
+.blog-meta {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+#blog-content {
+  line-height: 1.9; /* More breathing room for text lines */
+  color: var(--text-main);
+}
+
+#blog-content h2 {
+  margin-top: 2.8rem; /* Reduced from 4rem */
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#blog-content h3 {
+  margin-top: 2rem; /* Reduced from 3rem */
+  margin-bottom: 1.2rem;
+}
+
+#blog-content p {
+  margin-bottom: 2.2rem; /* Clearly distinguish paragraphs from simple line breaks */
+}
+
+#blog-content pre {
+  background: #f4f4f4;
+  padding: 1.2rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 2.2rem;
+}
+
+[data-theme="dark"] #blog-content pre {
+  background: #1e1e1e;
+}
+
+#blog-content code {
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] #blog-content code {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#blog-content img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 2rem 0; /* Space around images */
+}
+
+#blog-content ul,
+#blog-content ol {
+  margin-left: 2.5rem;
+  margin-bottom: 2.2rem;
+}
+
+#blog-content li {
+  margin-bottom: 0.8rem;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.back-btn:hover {
   color: var(--accent-color);
 }

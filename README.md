@@ -1,47 +1,43 @@
-# Uliboooo's Portfolio
+# Astro Starter Kit: Minimal
 
-[https://about.uliboooo.dev/](https://about.uliboooo.dev/)
+```sh
+npm create astro@latest -- --template minimal
+```
 
-## Features
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-- **About Me**: Introduction and bio.
-- **Repositories**: Showcase of GitHub projects.
-- **Articles**: Links to external articles (Zenn, Note).
-- **Blogs**: Integrated blog system using pure JavaScript. No Ruby/Jekyll required.
+## 🚀 Project Structure
 
-## How to Add a Blog Post
+Inside of your Astro project, you'll see the following folders and files:
 
-1.  Create a new markdown file in the `posts` directory.
-2.  Name the file using the format `YYYY-MM-DD-title.md` (e.g., `2026-01-04-my-awesome-post.md`).
-3.  **Important:** Add YAML Front Matter at the top of the file to define the title, date, and description:
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-    ```yaml
-    ---
-    title: "My Awesome Post"
-    date: 2026-01-04
-    description: "A short summary of the post that appears in the list."
-    ---
-    ```
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-4.  Write your content in Markdown below the second `---`.
-5.  Commit and push to GitHub.
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-## Local Development
+Any static assets, like images, can be placed in the `public/` directory.
 
-Since this is a pure static site (HTML/CSS/JS), you can run it with any static file server.
+## 🧞 Commands
 
-1.  **Start a local server**:
-    *   **Python (Recommended)**: `python3 -m http.server 8080`
-    *   Node: `npx http-server`
-    *   VS Code: "Live Server" extension.
+All commands are run from the root of the project, from a terminal:
 
-2.  **Open in Browser**: `http://localhost:8080`
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-### How the Blog System Works
+## 👀 Want to learn more?
 
-1.  **Storage**: Posts are simple Markdown files in the `posts/` folder.
-2.  **Listing**: `index.html` fetches the list of posts.
-    *   **Locally**: It attempts to read the `posts/` directory directly (works with Python's simple server).
-    *   **Production**: It uses the GitHub API to fetch the file list from the repository.
-3.  **Rendering**: It fetches the content of each post to extract the metadata (Title, Description) for the list view.
-4.  **Viewing**: `blog.html` fetches the raw Markdown and renders it to HTML using `marked.js`.
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

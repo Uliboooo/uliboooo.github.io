@@ -1,0 +1,78 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const formattedDate = post.data.date.toISOString().split('T')[0];
+---
+
+<Layout title={`${post.data.title} | Uliboooo`} description={post.data.description}>
+	<!-- Specific Header for Blog Post -->
+	<header class="navbar">
+		<a href="/" class="logo">
+			<img src="/resource/logo.webp" alt="Uliboooo Logo" height="32" />
+			<span>Uliboooo</span>
+		</a>
+
+		<!-- Empty nav for layout balance -->
+		<div></div>
+
+		<div class="header-right">
+			<div class="social-links">
+				<a href="https://github.com/Uliboooo" target="_blank" aria-label="GitHub">
+					<img src="/resource/icons/github.svg" alt="GitHub" />
+				</a>
+				<a href="https://x.com/Uliboooo" target="_blank" aria-label="X (Twitter)">
+					<img src="/resource/icons/x.svg" alt="X" />
+				</a>
+				<a href="https://zenn.dev/uliboooo" target="_blank" aria-label="Zenn">
+					<img src="/resource/icons/zenn_logo.svg" alt="Zenn" class="no-invert" />
+				</a>
+				<a href="https://note.com/uliboooo" target="_blank" aria-label="Note">
+					<img src="/resource/icons/note.png" alt="Note" class="no-invert" />
+				</a>
+			</div>
+			<button id="theme-toggle" class="theme-btn">Dark</button>
+		</div>
+	</header>
+
+	<main class="container">
+		<a href="/#blogs" class="back-btn">← Back to Blogs</a>
+
+		<article class="card blog-container">
+			<header class="blog-header">
+				<h1 id="blog-title">{post.data.title}</h1>
+				<div class="blog-meta">
+					<span id="blog-date">{formattedDate}</span>
+				</div>
+			</header>
+
+			<div id="blog-content">
+				<Content />
+			</div>
+		</article>
+	</main>
+
+	<!-- Note: Global styles in Layout already handle .blog-content styling -->
+</Layout>
+
+<style>
+	/* Blog specific styles copied from legacy blog.html but scoped or global */
+	/* Since we are using global.css, we just need to ensure the classes match. 
+       The legacy CSS had #blog-content styles. 
+       Astro's <Content /> renders HTML directly.
+       We need to ensure global.css targets these elements correctly.
+       Legacy CSS targeted #blog-content h2, etc. 
+       We wrapped Content in <div id="blog-content"> so it should work.
+    */
+</style>
