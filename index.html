@@ -89,7 +89,7 @@
       const blogListContainer = document.getElementById('blog-list');
       if (blogListContainer) {
         const postsPath = 'posts/';
-        
+
         blogListContainer.innerHTML = '<div class="card empty-state"><p>Loading posts...</p></div>';
 
         // Helper: Parse YAML Front Matter
@@ -123,27 +123,27 @@
               if (!res.ok) return null;
               const text = await res.text();
               const meta = parseFrontMatter(text);
-              
+
               // Fallback logic
               let title = meta.title;
               let date = meta.date;
-              
+
               const dateMatch = filename.match(/^(\d{4}-\d{2}-\d{2})-(.*)/);
               if (dateMatch) {
-                 if (!date) date = dateMatch[1];
-                 if (!title) {
-                     title = dateMatch[2].replace(/-/g, ' ');
-                     title = title.charAt(0).toUpperCase() + title.slice(1);
-                 }
+                if (!date) date = dateMatch[1];
+                if (!title) {
+                  title = dateMatch[2].replace(/-/g, ' ');
+                  title = title.charAt(0).toUpperCase() + title.slice(1);
+                }
               }
               if (!title) title = filename;
-              
+
               return {
                 filename,
                 title,
                 date: date || '',
                 description: meta.description || '',
-                dateObj: date ? new Date(date) : new Date(0) 
+                dateObj: date ? new Date(date) : new Date(0)
               };
             } catch (e) {
               console.error('Error parsing post:', filename, e);
@@ -155,8 +155,8 @@
           validPosts.sort((a, b) => b.dateObj - a.dateObj);
 
           if (validPosts.length === 0) {
-             blogListContainer.innerHTML = '<div class="card empty-state"><h3>No Posts Yet</h3></div>';
-             return;
+            blogListContainer.innerHTML = '<div class="card empty-state"><h3>No Posts Yet</h3></div>';
+            return;
           }
 
           const listHtml = validPosts.map(post => {
@@ -168,7 +168,7 @@
               </a>
             `;
           }).join('');
-          
+
           blogListContainer.innerHTML = listHtml;
         }
 
@@ -179,7 +179,7 @@
             return response.json();
           })
           .then(postFiles => {
-             fetchAndRenderPosts(postFiles);
+            fetchAndRenderPosts(postFiles);
           })
           .catch(() => {
             // Fallback to directory listing (previous logic)
@@ -192,7 +192,7 @@
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
                 const links = Array.from(doc.querySelectorAll('a'));
-                
+
                 const postFiles = links
                   .map(link => link.getAttribute('href'))
                   .filter(href => href && (href.endsWith('.md') || href.endsWith('.markdown')))
