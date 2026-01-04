@@ -442,3 +442,38 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* Footnotes */
+.footnotes-sep {
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-color);
+  opacity: 0.5;
+}
+
+.footnotes {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.footnotes ol {
+  margin-left: 1.5rem;
+}
+
+.footnotes li {
+  margin-bottom: 0.5rem;
+}
+
+.footnote-ref {
+  text-decoration: none;
+  margin-left: 2px;
+  color: var(--accent-color);
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+.footnote-backref {
+  margin-left: 4px;
+  text-decoration: none;
+  color: var(--accent-color);
+}

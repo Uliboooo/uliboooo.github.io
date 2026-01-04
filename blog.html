@@ -12,8 +12,12 @@
 
   <!-- Marked.js for Markdown parsing -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked-footnote/dist/index.umd.min.js"></script>
 
   <script>
+    // Configure Marked with Footnote extension
+    marked.use(markedFootnote());
+
     // Theme Toggle Logic
     (function () {
       const savedTheme = localStorage.getItem('theme');

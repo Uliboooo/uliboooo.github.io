@@ -66,5 +66,4 @@ Adobeは基本的にwindows, mac以外のOSに対応していない。モバイ�
 
 [^2]: 実際はRedHat社などの有償でlinuxのサポートを行っている企業もある。(ただあくまで印象なのだが社内の個人コンピュータというよりワークステーションなどのサポートな気はする)
 
-[^3]: https://www.techpowerup.com/342337/almost-90-of-windows-games-run-on-linux-notes-report              
-https://www.protondb.com/
+[^3]: https://www.techpowerup.com/342337/almost-90-of-windows-games-run-on-linux-notes-report, https://www.protondb.com/
