@@ -344,8 +344,12 @@ a:hover {
 /* About & Empty States */
 .about-card {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   padding: 2rem;
+}
+
+.about-card:last-child {
+  margin-bottom: 0;
 }
 
 .about-card h2 {
@@ -353,6 +357,37 @@ a:hover {
   margin-bottom: 1.5rem;
   color: var(--text-main);
   font-family: var(--font-serif);
+}
+
+.about-card h3 {
+  margin-top: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--border-color);
+  margin: 1.5rem 0;
+  color: var(--text-muted);
+  font-style: italic;
+  background: rgba(0, 0, 0, 0.02);
+  padding: 1rem;
+  border-radius: 0 4px 4px 0;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-style: normal;
+  text-align: right;
+}
+
+blockquote cite a {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+[data-theme="dark"] blockquote {
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .empty-state {
