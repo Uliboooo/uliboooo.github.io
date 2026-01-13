@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="374ddqy1awIggKtvK0z3OX-8YC0gBes_NEFeZkTJX8Q">
   <link rel="shortcut icon" type="image/x-icon" href="/resource/favicon/favicon.ico">
+  <meta name="description"
+    content="ソフトウェアと文字が好きな大学生、Ulibooooのポートフォリオサイトです。Rustで開発したCLIツールや、技術記事（Zenn/note）の情報をまとめています。">
   <meta property="og:title" content="about uliboooo" />
   <meta property="og:description" content="describe about uliboooo" />
   <meta property="og:image" content="https://about.uliboooo.dev/resource/logo.png" />
@@ -13,8 +15,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="about uliboooo" />
 
-  <meta name="twitter:card" content="https://about.uliboooo.dev/resource/logo.png" />
-  <meta name="twitter:site" content="@uliboooo" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://about.uliboooo.dev/resource/logo.png" />
+
   <style>
     body {
       font-family: "Helvetica Neue",
@@ -93,8 +96,7 @@
         margin: 40px auto;
         padding: 20px 40px;
         position: relative;
-        background-color: #f9fbfd;
-        border-radius: 8px;
+        background-color: #f1f7f7;
         border-left: 6px solid #b2d8d8;
       }
 
@@ -117,10 +119,9 @@
       }
 
       blockquote cite a {
-        color: #888;
+        color: #555555;
         text-decoration: none;
         border-bottom: 1px solid #ddd;
-        transition: all 0.3s ease;
       }
 
       @media (max-width: 480px) {
@@ -146,6 +147,10 @@
     }
 
     footer {
+      a.source-link {
+        color: #005a5a;
+      }
+
       padding-top: 20px;
       padding-bottom: 20px;
     }
@@ -162,150 +167,155 @@
         <span>Uliboooo</span>
       </a>
     </div>
-    <div class="sns">
+    <nav class="sns">
       <a href="https://github.com/Uliboooo" , target="_blank">GitHub</a>
       <a href="https://x.com/Uliboooo" , target="_blank">X</a>
       <a href="https://zenn.dev/uliboooo" , target="_blank">zenn</a>
       <a href="https://note.com/uliboooo" , target="_blank">note</a>
       <a href="https://bsky.app/profile/uliboooo.bsky.social" , target="_blank">blue sky</a>
-    </div>
+    </nav>
   </header>
 
-  <div class="content">
-    <h2>About Me</h2>
-    <div class="sub_content">
-      <p>ソフトウェアと文字が好きな大学生。oは4つです。RustでCLIツールなどを開発しています。エディタはVim派です。</p>
-      <p>I am a university student who loves software and text. (My name has four 'o's). I develop CLI tools mainly
-        using Rust. I'm a Vimmer.</p>
-    </div>
+  <main>
 
-    <h2>Projects</h2>
-    <div class="sub_content">
+    <div class="content">
+      <h2>About Me</h2>
+      <div class="sub_content">
+        <p>ソフトウェアと文字が好きな大学生。oは4つです。RustでCLIツールなどを開発しています。エディタはVim派です。</p>
+        <p lang="en">I am a university student who loves software and text. (My name has four 'o's). I develop CLI tools
+          mainly
+          using Rust. I'm a Vimmer.</p>
+      </div>
 
-      <p>私が参加しているプロジェクトです。</p>
-      <p>These are the projects I participate in.</p>
+      <h2>Projects</h2>
+      <div class="sub_content">
 
-      <h3>CraBWave_FM</h3>
-      <p>まだ準備中のプロジェクトですがスピーカーとして出演予定です。</p>
-      <p>This project is currently in preparation, and I plan to participate as a speaker.</p>
-      <blockquote>
-        <p>
-          CrabWaveはソフトウェアの開発と研究について語り合う4人の大学生によるプロジェクトです。
-          浅瀬のような軽い話題からコアな話題までラジオとブログで発信しています。</p>
+        <p>私が参加しているプロジェクトです。</p>
+        <p lang="en">These are the projects I participate in.</p>
 
-        <p>
-          CrabWave is a project by four university students discussing software development and research. We
-          broadcast topics ranging from light shallow discussions to core technical topics via radio and blog.
-        </p>
-        <cite><a href="https://crabwave.rioze.dev/" target="_blank">Source: CrabWave</a></cite>
-      </blockquote>
-    </div>
+        <h3>CraBWave_FM</h3>
+        <p>まだ準備中のプロジェクトですがスピーカーとして出演予定です。</p>
+        <p lang="en">This project is currently in preparation, and I plan to participate as a speaker.</p>
+        <blockquote>
+          <p>
+            CrabWaveはソフトウェアの開発と研究について語り合う4人の大学生によるプロジェクトです。
+            浅瀬のような軽い話題からコアな話題までラジオとブログで発信しています。</p>
 
-    <h2>Repositories</h2>
-    <div class="sub_content">
-      <div class="repositories">
-        <div class="repo">
-          <h3>ghost_git_writer</h3>
-          <div class="links">
-            <a href="https://github.com/Uliboooo/ghost_git_writer" target="_blank">GitHub</a>
-            <a href="https://uliboooo.github.io/ghost_git_writer" target="_blank">About page</a>
+          <p lang="en">
+            CrabWave is a project by four university students discussing software development and research. We
+            broadcast topics ranging from light shallow discussions to core technical topics via radio and blog.
+          </p>
+          <cite><a href="https://crabwave.rioze.dev/" target="_blank">Source: CrabWave</a></cite>
+        </blockquote>
+      </div>
+
+      <h2>Repositories</h2>
+      <div class="sub_content">
+        <div class="repositories">
+          <div class="repo">
+            <h3>ghost_git_writer</h3>
+            <div class="links">
+              <a href="https://github.com/Uliboooo/ghost_git_writer" target="_blank">GitHub</a>
+              <a href="https://uliboooo.github.io/ghost_git_writer" target="_blank">About page</a>
+            </div>
+            <p>LLMでGitコミットメッセージ、README、または差分要約を作成するツール。</p>
           </div>
-          <p>LLMでGitコミットメッセージ、README、または差分要約を作成するツール。</p>
+
+          <div class="repo">
+            <h3>track2line</h3>
+            <div class="links">
+              <a href="https://github.com/Uliboooo/track2line" target="_blank">GitHub</a>
+            </div>
+            <p>VoiSona Talk などから出力された音声ファイルの名前を、台詞テキストを参照して一括変換するツール。</p>
+          </div>
+
+          <div class="repo">
+            <h3>dotfiles</h3>
+            <div class="links">
+              <a href="https://github.com/Uliboooo/dotfiles" target="_blank">GitHub</a>
+            </div>
+            <p>私のCLI系の設定ファイル一覧。Neovimなどの設定も管理しています。</p>
+          </div>
+
+          <div class="repo">
+            <h3>Fork Notes</h3>
+            <div class="links">
+              <a href="https://github.com/Uliboooo/fork_notes" target="_blank">GitHub</a>
+            </div>
+            <p>GithubのissuesページのようなGUIノートアプリ。gemini cliの練習でもあります。local_issues_lib にコア機能を依存している。</p>
+          </div>
+
+          <div class="repo">
+            <h3>local_issues_lib</h3>
+            <div class="links">
+              <a href="https://github.com/Uliboooo/local_issues_lib" target="_blank">GitHub</a>
+            </div>
+            <p>Fork Notesのコア機能郡。</p>
+          </div>
+
+          <div class="repo">
+            <h3>polish_notation</h3>
+            <div class="links">
+              <a href="https://github.com/Uliboooo/polish_notation" target="_blank">GitHub</a>
+            </div>
+            <p>Rustで再帰関数を用いたポーランド記法電卓。</p>
+          </div>
+
+          <div class="repo">
+            <h3>fibonacci_py</h3>
+            <div class="links">
+              <a href="https://github.com/Uliboooo/fibonacci_py" target="_blank">GitHub</a>
+            </div>
+            <p>フィボナッチ数列をPythonで生成するツール。</p>
+          </div>
         </div>
+      </div>
 
-        <div class="repo">
-          <h3>track2line</h3>
-          <div class="links">
-            <a href="https://github.com/Uliboooo/track2line" target="_blank">GitHub</a>
+      <h2>Articles</h2>
+      <div class="sub_content">
+        <div class="articles">
+          <div class="link">
+            <a href="https://zenn.dev/uliboooo/articles/9f0add249046d9" target="_blank">Zenn:
+              Rustでトレイト境界のような形で変数を束縛する【dyn】</a>
+            <p>実行時に型を決定したい場合のRustのテクニック。</p>
           </div>
-          <p>VoiSona Talk などから出力された音声ファイルの名前を、台詞テキストを参照して一括変換するツール。</p>
-        </div>
 
-        <div class="repo">
-          <h3>dotfiles</h3>
-          <div class="links">
-            <a href="https://github.com/Uliboooo/dotfiles" target="_blank">GitHub</a>
+          <div class="link">
+            <a href="https://zenn.dev/uliboooo/articles/5bc9ce655c38c9" target="_blank">Zenn: git/gh コマンド。個人的チートシート</a>
+            <p>個人的によく使うからaliasにしてるコマンド群について。</p>
           </div>
-          <p>私のCLI系の設定ファイル一覧。Neovimなどの設定も管理しています。</p>
-        </div>
 
-        <div class="repo">
-          <h3>Fork Notes</h3>
-          <div class="links">
-            <a href="https://github.com/Uliboooo/fork_notes" target="_blank">GitHub</a>
+          <div class="link">
+            <a href="https://zenn.dev/uliboooo/articles/0f2c0e56e3f1fa" target="_blank">Zenn: serdeのシリアライズ/デシアライズ実例</a>
+            <p>Rustで構造体をserdeライブラリを使ってシリアライズする話。</p>
           </div>
-          <p>GithubのissuesページのようなGUIノートアプリ。gemini cliの練習でもあります。local_issues_lib にコア機能を依存している。</p>
-        </div>
 
-        <div class="repo">
-          <h3>local_issues_lib</h3>
-          <div class="links">
-            <a href="https://github.com/Uliboooo/local_issues_lib" target="_blank">GitHub</a>
+          <div class="link">
+            <a href="https://note.com/uliboooo/m/m6c323899ecf4" target="_blank">note: Rustを分りたい</a>
+            <p>Rustに関するnote記事のまとめ。</p>
           </div>
-          <p>Fork Notesのコア機能郡。</p>
-        </div>
 
-        <div class="repo">
-          <h3>polish_notation</h3>
-          <div class="links">
-            <a href="https://github.com/Uliboooo/polish_notation" target="_blank">GitHub</a>
+          <div class="link">
+            <a href="https://note.com/uliboooo/n/n7ea272e490f0" target="_blank">note: 垂直タブバーは贅沢</a>
+            <p>垂直タブの利点と小画面ゆえの悩ましさについて。</p>
           </div>
-          <p>Rustで再帰関数を用いたポーランド記法電卓。</p>
-        </div>
 
-        <div class="repo">
-          <h3>fibonacci_py</h3>
-          <div class="links">
-            <a href="https://github.com/Uliboooo/fibonacci_py" target="_blank">GitHub</a>
+          <div class="link">
+            <a href="https://note.com/uliboooo/n/nae5ae0da7df4" target="_blank">note: fnキーが左にないキーボードをmacで使う</a>
+            <p>キー配置の不便を解決する話。</p>
           </div>
-          <p>フィボナッチ数列をPythonで生成するツール。</p>
+
+          <div>
+            <a href="https://gist.github.com/Uliboooo/f62af5b8029731990b36a32fa7b0f515"
+              target="_blank">Linuxデスクトップ元年は来ない。敵は窓。</a>
+            <p>Windowsの悪口とLinux Desktopの話 in 2026</p>
+          </div>
+
         </div>
       </div>
     </div>
+  </main>
 
-    <h2>Articles</h2>
-    <div class="sub_content">
-      <div class="articles">
-        <div class="link">
-          <a href="https://zenn.dev/uliboooo/articles/9f0add249046d9" target="_blank">Zenn:
-            Rustでトレイト境界のような形で変数を束縛する【dyn】</a>
-          <p>実行時に型を決定したい場合のRustのテクニック。</p>
-        </div>
-
-        <div class="link">
-          <a href="https://zenn.dev/uliboooo/articles/5bc9ce655c38c9" target="_blank">Zenn: git/gh コマンド。個人的チートシート</a>
-          <p>個人的によく使うからaliasにしてるコマンド群について。</p>
-        </div>
-
-        <div class="link">
-          <a href="https://zenn.dev/uliboooo/articles/0f2c0e56e3f1fa" target="_blank">Zenn: serdeのシリアライズ/デシアライズ実例</a>
-          <p>Rustで構造体をserdeライブラリを使ってシリアライズする話。</p>
-        </div>
-
-        <div class="link">
-          <a href="https://note.com/uliboooo/m/m6c323899ecf4" target="_blank">note: Rustを分りたい</a>
-          <p>Rustに関するnote記事のまとめ。</p>
-        </div>
-
-        <div class="link">
-          <a href="https://note.com/uliboooo/n/n7ea272e490f0" target="_blank">note: 垂直タブバーは贅沢</a>
-          <p>垂直タブの利点と小画面ゆえの悩ましさについて。</p>
-        </div>
-
-        <div class="link">
-          <a href="https://note.com/uliboooo/n/nae5ae0da7df4" target="_blank">note: fnキーが左にないキーボードをmacで使う</a>
-          <p>キー配置の不便を解決する話。</p>
-        </div>
-
-        <div>
-          <a href="https://gist.github.com/Uliboooo/f62af5b8029731990b36a32fa7b0f515"
-            target="_blank">Linuxデスクトップ元年は来ない。敵は窓。</a>
-          <p>Windowsの悪口とLinux Desktopの話 in 2026</p>
-        </div>
-
-      </div>
-    </div>
-  </div>
 
   <footer>
     <p>&copy; 2025-2026 Uliboooo. All rights reserved.</p>
